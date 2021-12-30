@@ -1,25 +1,22 @@
 import requests
 import logging
 from datetime import datetime
-import pytz
 from os import environ as env
 from dotenv import load_dotenv
 load_dotenv()
 
-thaitz = pytz.timezone('Asia/Bangkok')
 url = env['NOTIFY_URL']
 
 def line_notify (**kwargs):
-    print(url+m)
     m = f"""\n Airflow Dag Status Notification 
     From Baby vm \n
     Dag => {kwargs["dag_id"]} 
     Task id => {kwargs["task_id"]}
     Job id => {kwargs["job_id_"]} 
-    Execution Day => {thaitz.localize(kwargs["exec_date"].strftime('%Y-%m-%d'))} 
-    Exceution Time => {thaitz.localize(kwargs["exec_date"].strftime('%H:%M:%S'))}
-    End Execution Day => {thaitz.localize((kwargs["end_date"]).strftime('%Y-%m-%d'))} 
-    End Execution Time => {thaitz.localize((kwargs["end_date"]).strftime('%H:%M:%S'))} 
+    Execution Day => {kwargs["exec_date"].strftime('%Y-%m-%d')} 
+    Exceution Time => {kwargs["exec_date"].strftime('%H:%M:%S')} +7
+    End Execution Day => {(kwargs["end_date"]).strftime('%Y-%m-%d')} 
+    End Execution Time => {(kwargs["end_date"]).strftime('%H:%M:%S')} +7
     Dag duration => {kwargs["dag_duration"]} second
     Dag status => {kwargs["dag_state"]}"""
 
