@@ -1,6 +1,6 @@
 # Line Airtify
 Line Airtify is Line Notify service and Apache Airflow dags notification  
-this project use Line Notify to send notification about airflow dags to specifig chat on Line platform  
+this project use Line Notify to send notification about airflow dags to specific chat on Line platform  
 
 How to use this script  
 1. register line account and login to [Line Notify](https://notify-bot.line.me/)
