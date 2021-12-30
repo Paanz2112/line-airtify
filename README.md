@@ -9,3 +9,4 @@ How to use this script
 4. use pip install -r req.txt to install lib  
 > (I'm using Python 3.7 if you using other version please see [pypi](https://pypi.org/) for more compatible version of library)
 5. create airflow dag file __see example in example_dag.py__
+> you can custom your message to whatever you want. See [notify doc](https://notify-bot.line.me/doc/en/) for more infomation about message customization
